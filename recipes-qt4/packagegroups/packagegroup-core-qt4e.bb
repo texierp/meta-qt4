@@ -5,6 +5,8 @@ LICENSE = "MIT"
 # Qt4 could NOT be built on MIPS64 with 64 bits userspace
 COMPATIBLE_HOST:mips64 = "null"
 
+PACKAGE_ARCH = "${TUNE_PKGARCH}"
+
 inherit packagegroup
 
 TOUCH = ' ${@bb.utils.contains("MACHINE_FEATURES", "touchscreen", "tslib tslib-calibrate tslib-tests qt4-embedded-plugin-mousedriver-tslib", "",d)}'
